@@ -1,0 +1,15 @@
+<div id="header">
+	<h1><%= @header_text %></h1>
+	<%= button_tag 'New', :id => 'form-input' %>
+</div>
+
+<%= form_for @post, url: posts_path, remote: true do |f|%>
+	<%= f.label :text, 'What\'s your goal for 2014? :)' %><br />
+	<%= f.text_area :text %><br />
+	<%= f.submit :post %>
+	<span id="post-message"></span>
+<% end %>
+
+<div id="footer">
+<h2><%= set_heading(@footer_text, @links).html_safe %></h2>
+</div>

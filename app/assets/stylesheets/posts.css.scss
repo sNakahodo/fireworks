@@ -1,0 +1,149 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font: 14px Helvetica; 
+	color: #252525;
+	background: url('back.jpg') repeat scroll 100%, 100%;
+}
+
+h1 {
+	display: inline;
+	color: #D50000;
+	float: none;
+	line-height: 2.8em;
+	font: 1.6em cursive;
+	text-shadow: -1px 1px #97222F;
+}
+
+h2 {
+	display: inline;
+	color: #E42196;
+	float: none;
+	line-height: 3.2em;
+	font-size: 0.9em;
+}
+
+h2 a {
+	color: #B021E4;
+}
+
+h2 a:visited {
+	color: #750DDE;
+}
+
+div#header {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 45px;
+	background-color: #282828;
+	box-shadow: 0 1px 1px #212121;
+	text-align: center;
+	z-index: 1;
+}
+
+div#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 45px;
+	background-color: #282828;
+	box-shadow: 0 -1px 0px #212121;
+	text-align: left;
+	z-index: 1;
+}
+
+p {
+	position: absolute;
+}
+
+form#new_post {
+	display: none;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	width: 300px;
+	height: 200px;
+	background-color: #F6F6F6;
+	padding: 10px 20px;
+}
+
+@media only screen and (max-device-width: 320px) {
+	form#new_post {
+		width: 90%;
+	}
+}
+
+form#new_post label {
+}
+
+form#new_post textarea {
+	display: block;
+	width: 100%;
+	height: 80px;
+	margin: 10px auto;
+	border: 1px solid #C4E8F0;
+	border-radius: 3px;
+}
+
+form#new_post textarea.invalid {
+	background-color: #FF7F7F;
+}
+
+form#new_post input[type='submit'] {
+	background: #A4D8E4; 
+	border: 1px solid #C4E8F0;
+	border-radius: 3px;
+	height: 34px;
+	width: 60px;
+	float: right;
+	color: #212121;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+form#new_post input[type='submit']:active {
+	background: #BEF4FF; 
+}
+
+button#form-input {
+	display: block;
+	/* width: 135px; */
+	width: 20%;
+	height: 35px;
+	background: #CBB812; 
+	border: 1px solid #8D7F00;
+	border-radius: 3px;
+	height: 34px;
+	float: right;
+	color: #414141;
+	text-shadow: 0px 0px #323232;
+	font-size: 0.9em;
+	margin: 4px 7px;
+}
+
+button#form-input:active {
+	background: #E3CD09; 
+}
+
+span.valid {
+	font-size: 0.9em;
+	color: #5A79C3;
+}
+
+span.invalid {
+	font-size: 0.7em;
+	color: #EE2E2E;
+}
+
