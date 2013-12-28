@@ -3,19 +3,22 @@ class PostsController < ApplicationController
 	def set_headings
 
 		@header_text = ''
-		@footer_text = 'Powered by %s & %s'
+		@footer_text = 'Powered by %s & %s.'
 
 		link_ror = 'http://rubyonrails.org/'
 		link_gsap = 'http://www.greensock.com/gsap-js/'
+		link_twitter = 'https://twitter.com/ShuNak80'
 	
 		@links = {}
 
 		if /.*(phone|pad|pod|tablet)+/i.match(request.user_agent)
 			@header_text = 'For Your Happy New Year'
-			@links = {'Rails' => link_ror, 'GSAP' => link_gsap}
+			@footer_text += ' Dev: %s'
+			@links = {'Rails' => link_ror, 'GSAP' => link_gsap, '@ShuNak80' => link_twitter}
 		else
 			@header_text = 'For Your Happy New Year ~ 2013 - 2014 ~'
-			@links = {'Ruby on Rails' => link_ror, 'GSAP TweenMax' => link_gsap}
+			@footer_text += ' Developed by: %s'
+			@links = {'Ruby on Rails' => link_ror, 'GSAP TweenMax' => link_gsap, '@ShuNak80' => link_twitter}
 		end
 
   end
