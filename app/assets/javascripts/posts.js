@@ -68,7 +68,7 @@ var animateElement = function(element) {
 		var to = {scaleX: 7, scaleY: 7, autoAlpha: 0, onComplete: complete};
 		
 		var options = {
-			duration: 0.1,
+			duration: 0.7,
 			from: from,
 			to: to
 		};
