@@ -1,4 +1,4 @@
-var tweenObjNum = 1;
+var tweenObjNum = 3;
 
 var setTextData = function(element) {
 
@@ -64,7 +64,8 @@ var animateElement = function(element) {
 
 	var explode = function() {
 
-		var from = {top: $('#header').css('height'), scaleX: 1, scaleY: 1, autoAlpha: 1};
+		//var from = {top: $('#header').css('height'), scaleX: 1, scaleY: 1, autoAlpha: 1};
+		var from = {top: this.top, scaleX: 1, scaleY: 1, autoAlpha: 1};
 		var to = {scaleX: 7, scaleY: 7, autoAlpha: 0, onComplete: complete};
 		
 		var options = {
@@ -80,10 +81,14 @@ var animateElement = function(element) {
 	var left = window.innerWidth * 0.7;
 
 	var from = {top: window.innerHeight, left: left - (Math.random() * left), scaleX: 1, scaleY: 1, autoAlpha: 1};
-	var to = {top: $('#header').css('height'), onComplete: explode, scaleX: 1, scaleY: 1, autoAlpha: 1};
+
+	var contentHeight = window.innerHeight - (parseInt($('#header').css('height')) + 40);
+
+	var to = {top: contentHeight - Math.random() * contentHeight, onComplete: explode, scaleX: 1, scaleY: 1, autoAlpha: 1};
+	console.log(window.innerHeight);
 
 	var options = {
-		duration: Math.random()*10,
+		duration: (Math.random()*3) + 3,
 		from: from,
 		to: to
 	};
