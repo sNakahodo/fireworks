@@ -83,7 +83,7 @@ var animateElement = function(element) {
 	var to = {top: $('#header').css('height'), onComplete: explode, scaleX: 1, scaleY: 1, autoAlpha: 1};
 
 	var options = {
-		duration: Math.random()*7,
+		duration: Math.random()*10,
 		from: from,
 		to: to
 	};
