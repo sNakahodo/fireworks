@@ -1,4 +1,4 @@
-var tweenObjNum = 3;
+var tweenObjNum = 2;
 
 var setTextData = function(element) {
 
@@ -58,7 +58,6 @@ var removeElement = function(element) {
 var animateElement = function(element) {
 
 	var complete = function() {
-		console.log(this.vars);
 		setTextData(setStyle(element));
 	};
 
@@ -85,7 +84,6 @@ var animateElement = function(element) {
 	var contentHeight = window.innerHeight - (parseInt($('#header').css('height')) + 40);
 
 	var to = {top: contentHeight - Math.random() * contentHeight, onComplete: explode, scaleX: 1, scaleY: 1, autoAlpha: 1};
-	console.log(window.innerHeight);
 
 	var options = {
 		duration: (Math.random()*3) + 3,
@@ -125,9 +123,9 @@ var onload = function() {
 
 	});
 
-	$('form#new_post').on('ajax:complete', function(xhr, status) {
+	$('form#new_post').on('ajax:complete', function(xhr, response) {
 
-		if (status.responseJSON.result == true) {
+		if (response.status == 200) {
 
 			$('#post_text').removeClass('invalid');
 			$('#post-message')
@@ -146,12 +144,13 @@ var onload = function() {
 
 			}, 1000);
 
-		} else {
+		} else if (response.status == 202) {
 
 			//inform invalid input
 			$('#post_text').addClass('invalid');
 			$('#post-message').removeClass('valid').addClass('invalid')
-					.text(status.responseJSON.message);
+				//	.text(status.responseJSON.message);
+					.text(response.responseJSON.message);
 
 		}
 
